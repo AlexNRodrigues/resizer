@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "Resizer",
+  "version": "1.0.0",
+  "description": "Compare a mesma página em vários tamanhos de tela, ao mesmo tempo.",
+  "minimum_chrome_version": "114",
+  "permissions": [
+    "storage",
+    "scripting",
+    "webNavigation",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_title": "Resizer — testar responsividade",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+R",
+        "mac": "Alt+Shift+R"
+      },
+      "description": "Abrir ou fechar o Resizer na página atual"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["studio.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
